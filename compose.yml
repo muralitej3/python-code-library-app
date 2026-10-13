@@ -1,7 +1,7 @@
 ---
 services:
   db:
-    image: chakalimurali/database:v1
+    image: chakalimurali/database:v4
     deploy:
       replicas: 1
     ports:
@@ -22,7 +22,7 @@ services:
     
 
   book_service:
-    image: chakalimurali/book:v1
+    image: chakalimurali/book:v2
     deploy:
       replicas: 1
     ports:
@@ -32,7 +32,7 @@ services:
     depends_on:
       - db
   borrow_service:
-    image: chakalimurali/borrow:v1
+    image: chakalimurali/borrow:v3
     deploy:
       replicas: 1
     ports:
@@ -43,7 +43,7 @@ services:
       - db
 
   frontend:
-    image: chakalimurali/frontend:v1
+    image: chakalimurali/frontend:v5
     deploy:
       replicas: 1
     ports:
